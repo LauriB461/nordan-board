@@ -35,14 +35,16 @@
     margin: 14px auto 0;
     border-radius: 999px;
   }
-  .members-grid {
+  .members-columns {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 44px 52px;
+    gap: 52px;
     align-items: start;
   }
-  .country {
-    break-inside: avoid;
+  .members-column {
+    display: flex;
+    flex-direction: column;
+    gap: 34px;
   }
   .country h2 {
     margin: 0 0 14px;
@@ -65,35 +67,35 @@
     line-height: 1.5;
     color: #454545;
   }
-  .country li:last-child {
-    margin-bottom: 0;
-  }
+  .country li:last-child { margin-bottom: 0; }
+
   @media (max-width: 900px) {
-    .members-grid {
+    .members-columns {
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 38px 38px;
+      gap: 38px;
+    }
+    .sweden-column {
+      grid-column: 1 / -1;
+      max-width: 520px;
     }
   }
+
   @media (max-width: 620px) {
-    .members-section {
-      padding: 42px 22px 52px;
-    }
-    .members-header {
-      margin-bottom: 34px;
-    }
-    .members-header h1 {
-      font-size: 1.9rem;
-    }
-    .members-grid {
+    .members-section { padding: 42px 22px 52px; }
+    .members-header { margin-bottom: 34px; }
+    .members-header h1 { font-size: 1.9rem; }
+    .members-columns {
       grid-template-columns: 1fr;
       gap: 32px;
     }
-    .country h2 {
-      font-size: 1.18rem;
+    .members-column { gap: 30px; }
+    .sweden-column {
+      grid-column: auto;
+      max-width: none;
+      order: -1;
     }
-    .country li {
-      font-size: 0.98rem;
-    }
+    .country h2 { font-size: 1.18rem; }
+    .country li { font-size: 0.98rem; }
   }
 </style>
 </head>
@@ -104,121 +106,127 @@
     <div class="members-divider"></div>
   </div>
 
-  <div class="members-grid">
-    <section class="country">
-      <h2>Denmark</h2>
-      <ul>
-        <li>Alcohol and society</li>
-        <li>Det Blaa Baand</li>
-        <li>NGO Fontana</li>
-        <li>Blå Kors Danmark</li>
-        <li>Metodistkirkens Råd för Folkesundhed</li>
-        <li>Trafikunionen</li>
-      </ul>
-    </section>
+  <div class="members-columns">
+    <div class="members-column">
+      <section class="country">
+        <h2>Denmark</h2>
+        <ul>
+          <li>Alcohol and society</li>
+          <li>Det Blaa Baand</li>
+          <li>NGO Fontana</li>
+          <li>Blå Kors Danmark</li>
+          <li>Metodistkirkens Råd för Folkesundhed</li>
+          <li>Trafikunionen</li>
+        </ul>
+      </section>
 
-    <section class="country">
-      <h2>Estonia</h2>
-      <ul>
-        <li>Public Foundation of Hope</li>
-        <li>Estonian Temperance Union</li>
-        <li>Estonian National Coalition on Tobacco and Alcohol Control</li>
-      </ul>
-    </section>
+      <section class="country">
+        <h2>Finland</h2>
+        <ul>
+          <li>Nykterhetsförbundet Hälsa och Trafik</li>
+          <li>The Finnish White Ribbon Union</li>
+          <li>KRAN, Finland</li>
+          <li>Kvinnogården – Naistenkartano r.f.</li>
+          <li>Raittiuden Ystävät (RY)</li>
+          <li>Sininauhaliittto ry</li>
+          <li>Finnish Association for Substance Abuse Prevention – EHYT</li>
+        </ul>
+      </section>
 
-    <section class="country">
-      <h2>Finland</h2>
-      <ul>
-        <li>Nykterhetsförbundet Hälsa och Trafik</li>
-        <li>The Finnish White Ribbon Union</li>
-        <li>KRAN, Finland</li>
-        <li>Kvinnogården – Naistenkartano r.f.</li>
-        <li>Raittiuden Ystävät (RY)</li>
-        <li>Sininauhaliittto ry</li>
-        <li>Finnish Association for Substance Abuse Prevention – EHYT</li>
-      </ul>
-    </section>
+      <section class="country">
+        <h2>Estonia</h2>
+        <ul>
+          <li>Public Foundation of Hope</li>
+          <li>Estonian Temperance Union</li>
+          <li>Estonian National Coalition on Tobacco and Alcohol Control</li>
+        </ul>
+      </section>
 
-    <section class="country">
-      <h2>Iceland</h2>
-      <ul>
-        <li>Brautin Bindindisfélag ökumanna</li>
-        <li>IOGT Island</li>
-        <li>Kom og Dans Stiftelsen i Norden</li>
-        <li>FRÆ Oplysningscenter for rusmiddel-prevention</li>
-        <li>Samstarfsráð um forvarnir</li>
-      </ul>
-    </section>
+      <section class="country">
+        <h2>Latvia</h2>
+        <ul>
+          <li>Partneri Association</li>
+          <li>Tavai Brīvībai</li>
+          <li>Via Libertas</li>
+        </ul>
+      </section>
+    </div>
 
-    <section class="country">
-      <h2>Latvia</h2>
-      <ul>
-        <li>Partneri Association</li>
-        <li>Tavai Brīvībai</li>
-        <li>Via Libertas</li>
-      </ul>
-    </section>
+    <div class="members-column">
+      <section class="country">
+        <h2>Norway</h2>
+        <ul>
+          <li>Actis – Norwegian Policy Network on Alcohol and Drugs</li>
+          <li>AKAN</li>
+          <li>Blå Kors Norge</li>
+          <li>DNT – Edru Livsstil</li>
+          <li>Forbundet Mot Rusgift</li>
+          <li>IOGT Norge</li>
+          <li>Juvente</li>
+          <li>Rusfri Oppvekst</li>
+          <li>Ungdom Mot Narkotika UMN</li>
+          <li>Ruspolitisk fellesråd Østlandet (RfØ)</li>
+        </ul>
+      </section>
 
-    <section class="country">
-      <h2>Lithuania</h2>
-      <ul>
-        <li>Lithuanian Tobacco and Alcohol Control Coalition</li>
-        <li>The Lighthouse of Hope</li>
-        <li>Lithuanian association of communities for addiction rehabilitation</li>
-      </ul>
-    </section>
+      <section class="country">
+        <h2>Iceland</h2>
+        <ul>
+          <li>Brautin Bindindisfélag ökumanna</li>
+          <li>IOGT Island</li>
+          <li>Kom og Dans Stiftelsen i Norden</li>
+          <li>FRÆ Oplysningscenter for rusmiddel-prevention</li>
+          <li>Samstarfsráð um forvarnir</li>
+        </ul>
+      </section>
 
-    <section class="country">
-      <h2>Norway</h2>
-      <ul>
-        <li>Actis – Norwegian Policy Network on Alcohol and Drugs</li>
-        <li>AKAN</li>
-        <li>Blå Kors Norge</li>
-        <li>DNT – Edru Livsstil</li>
-        <li>Forbundet Mot Rusgift</li>
-        <li>IOGT Norge</li>
-        <li>Juvente</li>
-        <li>Rusfri Oppvekst</li>
-        <li>Ungdom Mot Narkotika UMN</li>
-        <li>Ruspolitisk fellesråd Østlandet (RfØ)</li>
-      </ul>
-    </section>
+      <section class="country">
+        <h2>Lithuania</h2>
+        <ul>
+          <li>Lithuanian Tobacco and Alcohol Control Coalition</li>
+          <li>The Lighthouse of Hope</li>
+          <li>Lithuanian association of communities for addiction rehabilitation</li>
+        </ul>
+      </section>
 
-    <section class="country">
-      <h2>Sweden</h2>
-      <ul>
-        <li>Alkoholpolitiskt Forum</li>
-        <li>FAS-föreningen</li>
-        <li>Föreningen Fruktdrycker</li>
-        <li>IIAP, Internationella Institutet för Alkoholpolitik</li>
-        <li>JUNIS IOGT-NTO’s Juniorförbund</li>
-        <li>IOGT-NTO Sverige</li>
-        <li>KSAN Kvinnoorganisationernas Samarbetsråd i alkohol- och narkotikafrågor</li>
-        <li>LP-verksamhetens Ideella Riksförening</li>
-        <li>MHF-Region Skåne</li>
-        <li>Drogfri uppväxt</li>
-        <li>Riksförbundet Hem och Skola</li>
-        <li>Riksförbundet Hälsofrämjandet</li>
-        <li>Centralförbundet för alkohol- och narkotikaupplysning, CAN</li>
-        <li>RIKSKRIS, Kriminellas Revansch i Samhället</li>
-        <li>Sveriges Blåbandsförbund</li>
-        <li>Sveriges Landsråd i Alkohol- och Narkotikafrågor</li>
-        <li>Sällskapen Länkarna</li>
-        <li>Ungdomens Nykterhetsförbund</li>
-        <li>Kontraktsmetoden</li>
-        <li>Skåne Nykterhetsförbund</li>
-        <li>Nykterhetsrörelsens Bildningsverksamhet, NBV</li>
-        <li>Svenska Sällskapet för Nykterhet och Folkbildning</li>
-      </ul>
-    </section>
+      <section class="country">
+        <h2>Faroe Islands</h2>
+        <ul>
+          <li>Blái Krossur Føroya</li>
+          <li>IOGT Føroya</li>
+        </ul>
+      </section>
+    </div>
 
-    <section class="country">
-      <h2>Faroe Islands</h2>
-      <ul>
-        <li>Blái Krossur Føroya</li>
-        <li>IOGT Føroya</li>
-      </ul>
-    </section>
+    <div class="members-column sweden-column">
+      <section class="country">
+        <h2>Sweden</h2>
+        <ul>
+          <li>Alkoholpolitiskt Forum</li>
+          <li>FAS-föreningen</li>
+          <li>Föreningen Fruktdrycker</li>
+          <li>IIAP, Internationella Institutet för Alkoholpolitik</li>
+          <li>JUNIS IOGT-NTO’s Juniorförbund</li>
+          <li>IOGT-NTO Sverige</li>
+          <li>KSAN Kvinnoorganisationernas Samarbetsråd i alkohol- och narkotikafrågor</li>
+          <li>LP-verksamhetens Ideella Riksförening</li>
+          <li>MHF-Region Skåne</li>
+          <li>Drogfri uppväxt</li>
+          <li>Riksförbundet Hem och Skola</li>
+          <li>Riksförbundet Hälsofrämjandet</li>
+          <li>Centralförbundet för alkohol- och narkotikaupplysning, CAN</li>
+          <li>RIKSKRIS, Kriminellas Revansch i Samhället</li>
+          <li>Sveriges Blåbandsförbund</li>
+          <li>Sveriges Landsråd i Alkohol- och Narkotikafrågor</li>
+          <li>Sällskapen Länkarna</li>
+          <li>Ungdomens Nykterhetsförbund</li>
+          <li>Kontraktsmetoden</li>
+          <li>Skåne Nykterhetsförbund</li>
+          <li>Nykterhetsrörelsens Bildningsverksamhet, NBV</li>
+          <li>Svenska Sällskapet för Nykterhet och Folkbildning</li>
+        </ul>
+      </section>
+    </div>
   </div>
 </section>
 </body>
